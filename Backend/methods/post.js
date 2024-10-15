@@ -20,7 +20,7 @@ const postRequest = async (req, res) => {
       body.cast.length === 0
     ) {
       res.writeHead(404);
-      res.end("Lütfen zorunlu olan bütün alanları tanımlayınnn");
+      res.end("Please fill in all required fields"); //Lütfen zorunlu olan bütün alanları doldurunuz
       return;
     }
 
@@ -42,7 +42,7 @@ const postRequest = async (req, res) => {
     res.end(JSON.stringify(body));
   } else {
     res.writeHead(404);
-    res.end("Geçersiz yola istek atıldı");
+    res.end("A request was sent to an invalid path"); //Geçersiz yola istek atıldı
   }
 };
 

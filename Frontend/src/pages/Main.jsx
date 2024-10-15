@@ -9,7 +9,7 @@ import { useSearchParams } from "react-router-dom";
 const Main = () => {
   const [params, setParams] = useSearchParams();
 
-  // api isteğinde kullanılcak nesne
+  // api isteginde kullanilcak nesne
   const options = {
     params: {
       query: params.get("query"),

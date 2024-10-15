@@ -12,7 +12,7 @@ const Header = () => {
         className="border rounded-full py-1 px-5 hover:bg-black hover:text-white transition"
         to="/create"
       >
-        Film Oluştur
+        Create Film
       </Link>
     </header>
   );

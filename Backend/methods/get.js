@@ -25,7 +25,9 @@ const getRequest = (req, res) => {
 
     // 4) eger film bulunamazsa hata gonder
     res.writeHead(404);
-    return res.end(JSON.stringify({ message: "Aranılan film bulunamadı" }));
+    return res.end(
+      JSON.stringify({ message: "The searched film could not be found" }) //Aranılan film bulunamadı
+    );
   }
 
   // temel url e istek atılırsa bbutun  filmleri gonder
@@ -48,7 +50,7 @@ const getRequest = (req, res) => {
 
   // yol yanlissa hata gonder
   res.writeHead(404);
-  res.end(JSON.stringify({ message: "Yol bulunamadı" }));
+  res.end(JSON.stringify({ message: " Path not found" })); //Yol bulunamadı
 };
 
 module.exports = getRequest;

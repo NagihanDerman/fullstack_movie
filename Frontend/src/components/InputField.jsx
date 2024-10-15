@@ -1,5 +1,3 @@
-import React from "react";
-
 const InputField = ({ name, label, type = "text", min, max }) => {
   return (
     <div className="relative w-full">

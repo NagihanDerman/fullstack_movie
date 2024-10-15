@@ -7,40 +7,40 @@ import { useNavigate } from "react-router-dom";
 const Create = () => {
   const navigate = useNavigate();
 
-  // form gönderilince
+  // form gonderilince
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // inputlardaki veriyi al (nesne şeklinde)
+    // inputlardaki veriyi alip nesne seklinde dondurur
     const formdata = new FormData(e.target);
     const movieData = Object.fromEntries(formdata.entries());
 
-    // kategorileri diziye çevir
+    // kategorileri diziye cevirir
     movieData.genre = movieData.genre.split(",");
 
-    // ekibi diziye çevir
+    // ekibi diziye cevirir
     movieData.cast = movieData.cast.split(",");
 
-    // api'a film oluşturmak için http isteği at
+    // api'a film olusturmak icin http istegi at
     api
       .post("/api/movies", movieData)
       .then((res) => {
         // bildirim gönder
-        toast.success("Film Listeye Eklendi");
+        toast.success("Movie added to the list");
 
-        // detay sayfasına yönlendir
+        // detay sayfasına yonlendir
         navigate(`/movie/${res.data.id}`);
       })
       .catch((err) => {
         console.log(err);
-        toast.error("Üzgünüz :( İşlem Başarısız");
+        toast.error("Sorry :( Operation failed");
       });
   };
 
   return (
     <div className="bg-yellow-600 flex-1 grid place-items-center px-5 py-8">
       <div className="bg-white w-full max-w-[800px] p-10 rounded shadow-lg">
-        <h1 className="text-3xl font-semibold mb-6">Yeni Film Oluştur</h1>
+        <h1 className="text-3xl font-semibold mb-6">Create New Film</h1>
 
         <form
           onSubmit={handleSubmit}
@@ -51,7 +51,7 @@ const Create = () => {
           ))}
 
           <button className="shadow border py-3 rounded-lg hover:shadow-lg hover:bg-gray-200 transition">
-            Oluştur
+            Create
           </button>
         </form>
 

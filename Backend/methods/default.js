@@ -6,7 +6,7 @@ const defaultRequest = (req, res) => {
   // res.setHeader("Content-Type", "application/json");
 
   //cevap icerigini belirleme
-  res.write(JSON.stringify({ message: "istek adresi hatali" }));
+  res.write(JSON.stringify({ message: "The request address is incorrect" })); //İstek adresi hatalı
 
   //client' e cevabi gonder
   res.end();

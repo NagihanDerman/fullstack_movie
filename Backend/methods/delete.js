@@ -17,7 +17,7 @@ const deleteRequest = (req, res) => {
     // yoksa id gecersiz hatası gonderir
     if (!isFound) {
       res.writeHead(404);
-      return res.end("Gonderilen id'li eleman bulunamadi");
+      return res.end("The element with the given ID could not be found"); //Gönderilen id'li eleman bulunamadı
     }
 
     // diziden id'si bilinen filmi kaldirma,silme

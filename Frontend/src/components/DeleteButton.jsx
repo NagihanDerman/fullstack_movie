@@ -1,4 +1,3 @@
-import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import api from "../utils/api";
@@ -7,17 +6,17 @@ import { toast } from "react-toastify";
 const DeleteButton = ({ id }) => {
   const navigate = useNavigate();
 
-  // filmi silmek için api isteği at
+  // filmi silmek icin api istegi
   const handleDelete = () => {
     api
       .delete(`/api/movies/${id}`)
       .then(() => {
         navigate("/");
-        toast.warning("Film kaldırıldı");
+        toast.warning("Movie deleted");
       })
       .catch((err) => {
         console.log(err);
-        toast.err("Silme işlemi başarısız oldu");
+        toast.err("Deletion failed");
       });
   };
 

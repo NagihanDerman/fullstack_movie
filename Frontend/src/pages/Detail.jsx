@@ -3,7 +3,7 @@ import api from "../utils/api";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
-import ListField from "../components/ListField";
+import ListField from "../components/ListenField";
 import DeleteButton from "../components/DeleteButton";
 
 const Detail = () => {
@@ -34,7 +34,7 @@ const Detail = () => {
         </div>
 
         <div className="flex flex-col gap-10">
-          {/* Başlık */}
+          {/* Baslik */}
           <div>
             <h1 className="text-3xl font-semibold mb-3">{data.title}</h1>
             <p>{data.description}</p>
@@ -42,24 +42,24 @@ const Detail = () => {
 
           <div className="grid gap-10 md:grid-cols-2">
             <Field
-              label="İzleyici Skoru"
+              label="Audience Score"
               value={Number(data.rating).toFixed(1)}
             />
 
-            <Field label="Süre" value={data.duration} />
+            <Field label="Duration," value={data.duration} />
 
-            <Field label="Dil" value={data.language} />
+            <Field label="Language" value={data.language} />
 
-            <Field label="Yıl" value={data.year} />
+            <Field label="Year" value={data.year} />
 
-            <Field label="Yapımcı" value={data.director} />
+            <Field label="Producer" value={data.director} />
           </div>
 
           {/* Ekip */}
-          <ListField label="Ekip" arr={data.cast} />
+          <ListField label="Cast" arr={data.cast} />
 
           {/* Ekip */}
-          <ListField label="Türler" arr={data.genre} />
+          <ListField label="Genres" arr={data.genre} />
         </div>
       </div>
     </div>
