@@ -33,3 +33,5 @@ A fullstack project with an API and frontend that includes functionalities to li
 - GET `/api/movies/ID`: Returns a specific movie by ID
 - GET `/api/movies?query=TEXT`: Filters movies based on a query
 - DELETE `/api/movies/ID`: Deletes a specific movie by ID
+
+<img src="./Frontend/public/fullstackmovie.gif"/>
